@@ -5,14 +5,19 @@ import ThemeCard from '../components/ThemeCard';
 import ThemeButton from '../components/ThemeButton';
 import MediaPlaceholder from '../components/MediaPlaceholder';
 
-import andrewKimImg from '../assets/team/andrew-kim-j.svg';
-import sharonMurugiImg from '../assets/team/sharon-murugi.svg';
-import adrianCharlesImg from '../assets/team/adrian-charles.svg';
-import randyLuttaImg from '../assets/team/randy-lutta.svg';
-import sidneyBarakaImg from '../assets/team/sidney-baraka.svg';
+import andrewKimImg from '../assets/team/andi.jpeg';
+import sharonMurugiImg from '../assets/team/sharon.jpeg';
+import adrianCharlesImg from '../assets/team/adrian.jpeg';
+import randyLuttaImg from '../assets/team/randy.jpeg';
+import sidneyBarakaImg from '../assets/team/sidney.png';
 import steveKingoroImg from '../assets/team/steve-kingoro.svg';
 import christianTazmaImg from '../assets/team/christian-tazma.svg';
-import charlesMbuguaImg from '../assets/team/charles-mbugua.svg';
+import charlesMbuguaImg from '../assets/team/charles.jpeg';
+import jeniferMbalaImg from '../assets/team/jenifer_mbala.jpeg';
+import heroVideo from '../assets/Untitled design.mp4';
+import leadersTeamImg from '../assets/leaders-team.jpeg';
+import champsImg from '../assets/champs.jpeg';
+import communityImg from '../assets/community.jpeg';
 
 interface TeamMember {
   name: string;
@@ -50,6 +55,7 @@ const AboutPage: React.FC = () => {
     { name: 'Adrian Charles', role: 'Partnerships and Outreach Lead', bio: 'Builds and maintains partner relationships and outreach programs.', avatar: adrianCharlesImg, socials: [{ url: 'https://linkedin.com', label: 'LinkedIn' }] },
     { name: 'Randy Lutta', role: 'Team Member', bio: 'Contributes across features and community initiatives.', avatar: randyLuttaImg, socials: [{ url: 'https://github.com', label: 'GitHub' }] },
     { name: 'Sidney Baraka', role: 'Community Manager', bio: 'Organizes events and supports community contributors.', avatar: sidneyBarakaImg, socials: [{ url: 'https://twitter.com', label: 'Twitter' }] },
+    { name: 'Jenifer Mbala', role: 'Events Planner & Manager', bio: 'Plans and runs Salamander events, meetups, and community programs end to end.', avatar: jeniferMbalaImg, socials: [{ url: 'https://linkedin.com', label: 'LinkedIn' }] },
     { name: 'Steve Kingoro', role: 'Team Member', bio: 'Works on integrations and project polish.', avatar: steveKingoroImg, socials: [{ url: 'https://linkedin.com', label: 'LinkedIn' }] },
     { name: 'Christian Tazma', role: 'Open Source Projects Lead', bio: 'Coordinates open-source initiatives and contributor workflows.', avatar: christianTazmaImg, socials: [{ url: 'https://github.com', label: 'GitHub' }] },
     { name: 'Charles Mbugua', role: 'Maintainer', bio: 'Maintains core repos and reviews community PRs.', avatar: charlesMbuguaImg, socials: [{ url: 'https://github.com', label: 'GitHub' }] },
@@ -74,8 +80,16 @@ const AboutPage: React.FC = () => {
               <span className="text-primary font-bold">open source software</span>.
             </p>
             {/* Hero media placeholder – full-width banner / hero video */}
-            <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden">
-              <MediaPlaceholder type="video" aspectRatio="wide" label="Hero video or banner image" className="w-full" />
+            <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-slate-800/80">
+              <video
+                src={heroVideo}
+                className="w-full aspect-[21/9] object-cover"
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
           </div>
         </section>
@@ -108,7 +122,11 @@ const AboutPage: React.FC = () => {
                 </div>
               </div>
               <ThemeCard className="overflow-hidden">
-                <MediaPlaceholder type="image" aspectRatio="portrait" label="Mission / team photo or video" className="w-full" />
+                <img
+                  src={leadersTeamImg}
+                  alt="Salamander Leadership Team"
+                  className="w-full h-auto object-cover"
+                />
               </ThemeCard>
             </div>
           </div>
@@ -147,14 +165,22 @@ const AboutPage: React.FC = () => {
                   Salamander started with a simple belief: that everyone can contribute to open source. We built a space where engineers, designers, and makers learn together and ship in the open.
                 </p>
               </div>
-              <ThemeCard>
-                <MediaPlaceholder type="image" aspectRatio="video" label="Story image or short video" className="w-full" />
+              <ThemeCard className="overflow-hidden">
+                <img
+                  src={champsImg}
+                  alt="Salamander Champions"
+                  className="w-full aspect-video object-cover"
+                />
               </ThemeCard>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <ThemeCard className="order-2 lg:order-1">
-                <MediaPlaceholder type="image" aspectRatio="video" label="Office / culture / event photo" className="w-full" />
+              <ThemeCard className="order-2 lg:order-1 overflow-hidden">
+                <img
+                  src={communityImg}
+                  alt="Salamander Community and Culture"
+                  className="w-full aspect-video object-cover"
+                />
               </ThemeCard>
               <div className="order-1 lg:order-2">
                 <h3 className="text-2xl font-bold text-white mb-4">Build. Burn. Evolve.</h3>
@@ -288,7 +314,7 @@ const AboutPage: React.FC = () => {
               <a className="hover:text-primary transition-colors" href="#">Security</a>
               <a className="hover:text-primary transition-colors" href="#">Status</a>
             </div>
-            <p className="text-sm text-slate-600">© 2025 Salamander Tech Hub. Built with code.</p>
+            <p className="text-sm text-slate-600">© 2026 Salamander Tech Hub. Built with code.</p>
           </div>
         </div>
       </footer>
